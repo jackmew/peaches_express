@@ -62,6 +62,23 @@ exports.saveImage = function(imageArray){
 
 }
 
+/****************************** 查詢上傳照片 query photo *****************************/
+exports.findImage = function(name,callback){
+	console.log("crud : findImage");
+	if(name === ""){
+		db.ImageData.find({},function(err,result){
+			if(err) return console.error(err);
+			//console.log(result);
+			callback && callback(result);
+		});
+	}else{
+		db.ImageData.find({'name':name },function(err,result){
+			if(err) return console.error(err);
+			//console.log(result);
+			callback && callback(result);
+		});
+	}
+}
 
 
 

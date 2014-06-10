@@ -96,16 +96,17 @@
                 <div>
                     <div>
                         <ul data-role="listview" >
-                            <li><a href="#queryuser">使用者</a></li>
-                            <li><a href="#queryuser">開口部結構表</a></li>
-                            <li><a href="#queryuser">結構資料</a></li>
-                            <li><a href="#queryuser">物品資料</a></li>
-                            <li><a href="#queryuser">現場跡證資料</a></li>
-                            <li><a href="#queryuser">初期火災狀況</a></li>
-                            <li><a href="#queryuser">現場物品狀況</a></li>
-                            <li><a href="#queryuser">起火建築物(場所)狀況</a></li>
-                            <li><a href="#queryuser">搶救狀況</a></li>
-                            <li><a href="#queryuser">依照日期和使用者查詢</a></li>
+                            <li><a href="#queryUser">使用者</a></li>
+                            <li><a href="#queryUser">開口部結構表</a></li>
+                            <li><a href="#queryUser">結構資料</a></li>
+                            <li><a href="#queryUser">物品資料</a></li>
+                            <li><a href="#queryUser">現場跡證資料</a></li>
+                            <li><a href="#queryUser">初期火災狀況</a></li>
+                            <li><a href="#queryUser">現場物品狀況</a></li>
+                            <li><a href="#queryUser">起火建築物(場所)狀況</a></li>
+                            <li><a href="#queryUser">搶救狀況</a></li>
+                            <li><a href="#queryUser">依照日期和使用者查詢</a></li>
+                            <li><a href="#queryPhoto">查詢上傳圖片</a></li>
                         </ul>
                     </div> 
                 </div>    
@@ -113,7 +114,7 @@
             </div>
         </div>
 <!-- ***********************  查詢使用者  query user ************************ -->
-        <div data-role="page" id="queryuser">
+        <div data-role="page" id="queryUser">
             <div data-role="header"  data-position="fixed">
                 <a href="#login">首頁</a>
                 <h1>查詢使用者</h1>
@@ -126,11 +127,34 @@
                         </br>
                         <button id="query_user" name="query_user"class="ui-shadow ui-btn ui-corner-all">查詢</button>  
                     </div>
+                    <div id="showImage_div">
+                    </div>
                 </div>    
                 </br>
                 <div id="div-result-user">
                     <ul data-role="listview" id="listview_result-user">
                     </ul>
+                </div>      
+            </div>
+        </div>
+<!-- ***********************  查詢圖片  query photo ************************ -->
+        <div data-role="page" id="queryPhoto">
+            <div data-role="header"  data-position="fixed">
+                <a href="#login">首頁</a>
+                <h1>查詢上傳圖片</h1>
+            </div>
+            <div data-role="content">
+                <div>
+                    <div class="ui-field-contain">
+                        <label for="username">使用者名稱</label>
+                        <input type="text" name="img_username" id="img_username" placeholder="姓名" value="">
+                        </br>
+                        <button id="query_image" name="query_image"class="ui-shadow ui-btn ui-corner-all">查詢</button>  
+                    </div>
+                </div>    
+                </br>
+                <div id="div-result-image">
+                    
                 </div>      
             </div>
         </div>

@@ -68,7 +68,9 @@ router.post('/fileUpload',function(req,res){
 		imageArray.push(req.files[0].mimetype);
 		imageArray.push(new Date());
 		//儲存binary
-		imageArray.push(data);
+		// imageArray.push(data);
+		//儲存base64 string
+		imageArray.push(new Buffer(data).toString('base64'));
 
 		CRUD.saveImage(imageArray);
 	});
@@ -83,6 +85,35 @@ router.post('/fileUpload',function(req,res){
 	var jsontext = '{"status":"上傳成功"}';
 	res.send(jsontext);	
 });
+
+/****************************** 查詢上傳照片 query photo *****************************/
+router.get('/findImage',function(req,res){
+	console.log("route : findImage");
+	var name = req.query.username;
+	CRUD.findImage(name,function(result){
+		res.send(result);
+	
+	})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

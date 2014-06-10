@@ -1,6 +1,8 @@
 exports.schema = {
 	fileName: String,
 	contentType: String,
-	bytes: Buffer,
+	bytes:String,
+	//儲存成binary
+	//bytes: Buffer,
 	time: Date
 };

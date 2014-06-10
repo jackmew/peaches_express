@@ -22,6 +22,8 @@ $(function(){
 /****************************** 拍攝照片 photo *****************************/
 	$("#file_upload_submit").on('click',onFileUploadClick);
 
+/****************************** 查詢上傳照片 query photo *****************************/
+	$("#query_image").on('click',onQueryImageClick);
 
 })
 
@@ -39,6 +41,8 @@ function clear () {
     $("input[name='fire_position']").val("");
 
     $("#map").hide();
+
+    $("#div-result-image img").remove();
 }
 /******************************** 登入使用者名稱  login *******************************************/
 function onLoginSubmit () {
@@ -233,13 +237,46 @@ function onFileUploadClick(){
 
 }
 
+/****************************** 查詢上傳照片 query photo *****************************/
+function onQueryImageClick(){
+	var username = $("input [name='img_username']").val();
+	ajax_findImage(username);
+}
 
+function ajax_findImage(username){
+	console.log(current_Url+'/findImage');
+	$.ajax({
+		url: 'http://'+current_Url+'/findImage',
+		type: 'GET',
+		data:{
+			username:username
+		},
+		success: function(result){
+			console.log("find Image success");
+			//alert("success : findLoginUser");
+			alert(result.length);
+			addImage(result);
+			//addLoginUser_listview(result);
+		},
+		error: function(xhr,status){
+			alert("error : findImage");
+		}
+	});
+}
 
+function addImage(images){
+	$("#div-result-image img").remove();
+	var output='';
+	$.each(images,function(index,value){
+		output += '<img style="height:50%;width:100%;" src="data:'+value.contentType+';base64,'+
+	              ''+value.bytes+'"/>';
 
-
-
-
-
+		$("#div-result-image").append(output);
+		//clear output
+		output='';
+	});
+	
+}
 
 
 
