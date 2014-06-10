@@ -48,6 +48,8 @@ router.get('/findLoginUser',function(req,res){
 });
 /****************************** 拍攝照片 photo *****************************/
 router.post('/fileUpload',function(req,res){
+	
+	
 	console.log("fileUpload");
 	console.dir(req.files);
 	console.dir(req.files[0].path);
@@ -75,8 +77,11 @@ router.post('/fileUpload',function(req,res){
 		if(err)console.log("fs unlink fail");
 
 		console.log("fs unlink successfully");
-	});
 
+	});
+	//因為dataType:'json',所以回傳的格式也要是json
+	var jsontext = '{"status":"上傳成功"}';
+	res.send(jsontext);	
 });
 
 

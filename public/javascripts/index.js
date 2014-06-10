@@ -188,7 +188,10 @@ function getAddress(latitude,longtitude){
 
 /****************************** 拍攝照片 photo *****************************/
 function onFileUploadClick(){
+	console.log("onFileUploadClick");
+
 	$("#file_upload_div input[type='file']").each(function(){
+		//直接抓到file 並且判斷file是不是不存在
 		var file = $(this)[0].files[0];
 		if(file === undefined){
 			console.log("There is no file chosed");
@@ -196,11 +199,13 @@ function onFileUploadClick(){
 			console.log(file);
 
 			var data = new FormData();
+			//拿來serialize的是filelist
 			var fileList = $(this)[0].files;
 			$.each(fileList,function(key,value){
 				data.append(key,value);
 			});	
-			console.log(onFileUploadClick);
+
+			
 			console.log('http://'+current_Url+'/fileUpload/');
 			$.ajax({
 				url: 'http://'+current_Url+'/fileUpload/',
@@ -210,12 +215,17 @@ function onFileUploadClick(){
 				dataType: 'json',
 				processData: false,
 				contentType: false,
-				success: function(data){
-					alert("上傳成功");
+				success: function(result){
+					//因為dataType:'json',所以回傳的格式也要是json
+					alert(result.status);
 					console.log("success fileSave");
 				},
-				error: function(data,jqXHR){
+				error: function(result,jqXHR){
 					console.log("error fileSave");
+				},
+				complete: function(){
+					//alert("已上傳");
+					$("#file_upload_div input[type='file']").val("");
 				}
 			});
 		}
