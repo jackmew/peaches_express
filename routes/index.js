@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs');
 var router = express.Router();
 var CRUD = require('../models/crud');
 
@@ -45,8 +46,38 @@ router.get('/findLoginUser',function(req,res){
 		res.send(result);
 	})
 });
+/****************************** 拍攝照片 photo *****************************/
+router.post('/fileUpload',function(req,res){
+	console.log("fileUpload");
+	console.dir(req.files);
+	console.dir(req.files[0].path);
+	var temPath = './'+req.files[0].path;
 
+	var imageArray = [];
+	var originalname = req.files[0].originalname; //hexo4.png
+	var originalnameSplit = originalname.split("."); //hexo4,png
+	var filename = originalnameSplit[0]; //hexo4
+	
+	//將uploads的檔案 讀出來 變成binary
+	fs.readFile(temPath,function(err,data){
+		if(err)console.log("can't read file");
 
+		imageArray.push(filename); 
+		imageArray.push(req.files[0].mimetype);
+		imageArray.push(new Date());
+		//儲存binary
+		imageArray.push(data);
+
+		CRUD.saveImage(imageArray);
+	});
+	//儲存完後 就把uploads裡面檔案清掉
+	fs.unlink(temPath,function(err,data){
+		if(err)console.log("fs unlink fail");
+
+		console.log("fs unlink successfully");
+	});
+
+});
 
 
 

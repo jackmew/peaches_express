@@ -180,3 +180,10 @@ div[name="fire_container_flatPic"] img ,div[name="fire_container_flatPic"] ifram
     width:100%;
     height:50%;
 }
+/***********************************  地址 address **************************************/
+#map {
+    width:100%;
+    /*不知道為啥會突然不能用% 顯示的map不佔空間? 會被擠掉 看不到*/
+    height:300px;
+    background-color: blue;
+}

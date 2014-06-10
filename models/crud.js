@@ -46,3 +46,45 @@ exports.findLoginUser = function(name,callback){
 		});
 	}
 }
+/****************************** 拍攝照片 photo *****************************/
+exports.saveImage = function(imageArray){
+	console.log("saveImage");
+	//console.log(imageArray[0]);
+
+	var image = new db.ImageData({
+		fileName: imageArray[0],
+		contentType: imageArray[1],
+		time: imageArray[2],
+		bytes: imageArray[3]
+
+	});
+	image.save();
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

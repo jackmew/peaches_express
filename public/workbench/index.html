@@ -5,8 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="../stylesheets/jquery.mobile-1.4.0.min.css">
 		<link rel="stylesheet" type="text/css" href="../stylesheets/index.css" />
+        <!-- Include Google Maps API (Google Maps API v3 已不需使用 API Key) -->
+        <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 		<script src="/lib/jquery-1-10-2.js"></script>
 		<script src="/lib/jquery-mobile-1-4-0-min.js"></script>
+        <script src="/lib/jquery.tinyMap.js"></script>
 		<script src="/javascripts/index.js"></script>
 	</head>
 	<body>
@@ -47,7 +50,10 @@
                 <div>
                     <label for="fire_position">火場位置:</label>
                     <input type="text" name="fire_position" id="fire_position" value="">
-                    <button class="ui-shadow ui-btn ui-corner-all">直接定位</button> 
+                    <button id="locate_submit" class="ui-shadow ui-btn ui-corner-all">直接定位</button> 
+                </div>
+                <p>定位</p>
+                <div id="map" style="width:100% ; height:30% ; background-color:blue;">
                 </div>    
                 </br>
                 <p>出動觀察紀錄</p>
@@ -646,7 +652,16 @@
                 <a href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
-                <p>表單</p>            
+                <div id="file_upload_div">
+                    <label for="file">上傳照片</label>
+                    <input type="file" name="file_upload1" id="file_upload1" value="">
+                    </br>
+                    <input type="file" name="file_upload2" id="file_upload2" value="">
+                     </br>
+                    <input type="file" name="file_upload3" id="file_upload3" value="">
+                     </br>
+                    <input type="submit" id="file_upload_submit" value="送出">
+                </div>           
             </div>
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
