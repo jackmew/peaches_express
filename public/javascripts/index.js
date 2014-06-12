@@ -1,5 +1,6 @@
 
 $(function(){
+	//document.location.reload(true);
 	console.log("start");
 	/*取得當前host*/	
 	current_Url = window.location.host;
@@ -12,7 +13,7 @@ $(function(){
 /******************************    地址 address  *********************************/
     $("#map").hide();
 
-    //$("#locate_submit").on('click',onLocateClick);
+    $("#locate_submit").on('click',onLocateClick);
 
 /******************************    頁面轉換 clear資料  *********************************/
     $("a").click(function(e) {
@@ -145,18 +146,36 @@ function js_yyyy_mm_dd (examTime) {
 function onLocateClick (){
     console.log("locate");
     $("#map").show();
-    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    //html5 geolocation 跟 phongap geolocation 根本幾乎一模一樣
+    //有了html5 geolocation根本也不需要用TinyMap了..
+     if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition,showError);
+    } else {
+        console.log("Geolocation is not supported by this browser.");
+    }
 }
-function onSuccess(position) {
+function showPosition(position) {
     console.log("success located! ");
     console.log('Longitude:'+ position.coords.longitude +'  Latitude :'+position.coords.latitude);
     var longtitude = position.coords.longitude;
     var latitude = position.coords.latitude;
     tinyMap(longtitude,latitude);
 }
-function onError(error) {
-    alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
 }
 function tinyMap(longtitude,latitude){
 
@@ -181,7 +200,7 @@ function getAddress(latitude,longtitude){
         success: function(result){
             console.log("success get address!");
             var address = result.results[0].formatted_address;
-            alert(address);
+            //alert(address);
             $("#fire_position").val(address);
         },
         error: function(xhr,result){
@@ -254,7 +273,7 @@ function ajax_findImage(username){
 		success: function(result){
 			console.log("find Image success");
 			//alert("success : findLoginUser");
-			alert(result.length);
+			alert("查到"+result.length+"筆照片");
 			addImage(result);
 			//addLoginUser_listview(result);
 		},

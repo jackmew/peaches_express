@@ -68,7 +68,7 @@ router.post('/fileUpload',function(req,res){
 		imageArray.push(req.files[0].mimetype);
 		imageArray.push(new Date());
 		//儲存binary
-		// imageArray.push(data);
+		//imageArray.push(data);
 		//儲存base64 string
 		imageArray.push(new Buffer(data).toString('base64'));
 

@@ -29,21 +29,21 @@
                 <label for="phone">電話:</label>
                 <input type="text" name="phone" id="phone" value=""> 
                 </br>
-                <a href="#address" class="ui-shadow ui-btn ui-corner-all">換到下頁</a>
+                <a href="#address" data-transition="slide" class="ui-shadow ui-btn ui-corner-all">換到下頁</a>
                 </br>
                 <p>(填寫您的姓名和電話是為了讓我們在無法掌握火災情形時,可以與您聯絡,謝謝)</p> 
                 </br>
                 <button id="login_submit" name="submit" class="ui-shadow ui-btn ui-corner-all">發送</button>  
                 </br>
                 </br>
-                <a href="#querylist" class="ui-shadow ui-btn ui-corner-all">查詢記錄</a>  
+                <a href="#querylist" data-transition="slide" class="ui-shadow ui-btn ui-corner-all">查詢記錄</a>  
             </div>         
         </div>
 
 <!-- ******************************  地址 address ********************************* -->
         <div data-role="page" id="address">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>火場位置</h1>
             </div>
             <div data-role="content">
@@ -53,7 +53,7 @@
                     <button id="locate_submit" class="ui-shadow ui-btn ui-corner-all">直接定位</button> 
                 </div>
                 <p>定位</p>
-                <div id="map" style="width:100% ; height:30% ; background-color:blue;">
+                <div id="map" style="height:400px;width:100%;background-color:blue;">
                 </div>    
                 </br>
                 <p>出動觀察紀錄</p>
@@ -77,11 +77,11 @@
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide" >現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide" >目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide" >消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide" >拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide" >建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -89,24 +89,25 @@
 <!-- *************************  查詢列表  query list ************************ -->
         <div data-role="page" id="querylist">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>查詢列表</h1>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <div>
                     <div>
                         <ul data-role="listview" >
-                            <li><a href="#queryUser">使用者</a></li>
-                            <li><a href="#queryUser">開口部結構表</a></li>
-                            <li><a href="#queryUser">結構資料</a></li>
-                            <li><a href="#queryUser">物品資料</a></li>
-                            <li><a href="#queryUser">現場跡證資料</a></li>
-                            <li><a href="#queryUser">初期火災狀況</a></li>
-                            <li><a href="#queryUser">現場物品狀況</a></li>
-                            <li><a href="#queryUser">起火建築物(場所)狀況</a></li>
-                            <li><a href="#queryUser">搶救狀況</a></li>
-                            <li><a href="#queryUser">依照日期和使用者查詢</a></li>
-                            <li><a href="#queryPhoto">查詢上傳圖片</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >使用者</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >開口部結構表</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >結構資料</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >物品資料</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >現場跡證資料</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >初期火災狀況</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >現場物品狀況</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >起火建築物(場所)狀況</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >搶救狀況</a></li>
+                            <li><a href="#queryUser" data-transition="slide" >依照日期和使用者查詢</a></li>
+                            <li><a href="#queryPhoto" data-transition="slide" >查詢上傳圖片</a></li>
                         </ul>
                     </div> 
                 </div>    
@@ -116,8 +117,9 @@
 <!-- ***********************  查詢使用者  query user ************************ -->
         <div data-role="page" id="queryUser">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>查詢使用者</h1>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <div>
@@ -140,8 +142,9 @@
 <!-- ***********************  查詢圖片  query photo ************************ -->
         <div data-role="page" id="queryPhoto">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>查詢上傳圖片</h1>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <div>
@@ -162,26 +165,26 @@
 <!-- ******************************  現場勘災表 status ********************************* -->
         <div data-role="page" id="status">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>現場勘災表</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    <li><a href="#open">開口部結構表</a></li>
-                    <li><a href="#structure">結構資料</a></li>
-                    <li><a href="#material">物品資料</a></li>
-                    <li><a href="#evidence">現場跡證資料</a></li>
+                    <li><a href="#open" data-transition="slide">開口部結構表</a></li>
+                    <li><a href="#structure" data-transition="slide">結構資料</a></li>
+                    <li><a href="#material" data-transition="slide">物品資料</a></li>
+                    <li><a href="#evidence" data-transition="slide">現場跡證資料</a></li>
                 </ul>             
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" class="ui-btn-active">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" class="ui-btn-active" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -189,9 +192,9 @@
 <!-- ******************************  開口部結構表 open ********************************* -->
         <div data-role="page" id="open">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>開口部結構表</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <div style="text-align: center">
@@ -448,11 +451,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" class="ui-btn-active">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" class="ui-btn-active" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -460,9 +463,9 @@
 <!-- ******************************  結構資料 structure ********************************* -->
         <div data-role="page" id="structure">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>結構資料</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -470,11 +473,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" class="ui-btn-active">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" class="ui-btn-active" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -483,9 +486,9 @@
 <!-- ******************************  物品資料 material ********************************* -->
         <div data-role="page" id="material">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>物品資料</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -493,11 +496,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" class="ui-btn-active">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" class="ui-btn-active" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -506,9 +509,9 @@
 <!-- ******************************  現場跡證資料 evidence ********************************* -->
         <div data-role="page" id="evidence">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>現場跡證資料</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -516,11 +519,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" class="ui-btn-active">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" class="ui-btn-active" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -529,26 +532,26 @@
 <!-- ******************************  目擊狀況訪談表格 insight ********************************* -->
         <div data-role="page" id="insight">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>目擊狀況訪談表格</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <ul data-role="listview" data-inset="true" style="min-width:210px;">
-                    <li><a href="#beginStatus">初期火災狀況</a></li>
-                    <li><a href="#sceneMaterial">現場物品狀況</a></li>
-                    <li><a href="#building">起火建築物(場所)狀況</a></li>
-                    <li><a href="#rescue">搶救狀況</a></li>
+                    <li><a href="#beginStatus" data-transition="slide">初期火災狀況</a></li>
+                    <li><a href="#sceneMaterial" data-transition="slide">現場物品狀況</a></li>
+                    <li><a href="#building" data-transition="slide">起火建築物(場所)狀況</a></li>
+                    <li><a href="#rescue" data-transition="slide">搶救狀況</a></li>
                 </ul>             
             </div>
             <div data-role="footer" data-position="fixed">
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status">現場勘災</a></li>
-                    <li><a href="#insight" class="ui-btn-active">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" class="ui-btn-active" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -557,9 +560,9 @@
 <!-- ******************************  初期火災狀況 beginStatus ********************************* -->
         <div data-role="page" id="beginStatus">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>初期火災狀況</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -567,11 +570,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" >現場勘災</a></li>
-                    <li><a href="#insight" class="ui-btn-active">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" class="ui-btn-active" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -579,9 +582,9 @@
 <!-- ******************************  現場物品狀況 sceneMaterial ********************************* -->
         <div data-role="page" id="sceneMaterial">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>現場物品狀況</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -589,11 +592,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" >現場勘災</a></li>
-                    <li><a href="#insight" class="ui-btn-active">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" class="ui-btn-active" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -601,9 +604,9 @@
 <!-- ******************************  起火建築物(場所)狀況 building ***************************** -->
         <div data-role="page" id="building">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>起火建築物(場所)狀況</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -611,11 +614,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" >現場勘災</a></li>
-                    <li><a href="#insight" class="ui-btn-active">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" class="ui-btn-active" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -623,9 +626,9 @@
 <!-- ******************************  搶救狀況 rescue ***************************** -->
         <div data-role="page" id="rescue">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>搶救狀況</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>            
@@ -633,11 +636,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status" >現場勘災</a></li>
-                    <li><a href="#insight" class="ui-btn-active">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" class="ui-btn-active" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -646,9 +649,9 @@
 <!-- ******************************  消防法令查詢 law ***************************** -->
         <div data-role="page" id="law">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>消防法令查詢</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <!--
@@ -658,11 +661,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law" class="ui-btn-active">消防法令</a></li>
-                    <li><a href="#photo">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" class="ui-btn-active" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -671,9 +674,9 @@
 <!-- ****************************** 拍攝照片 photo ***************************** -->
         <div data-role="page" id="photo">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>拍攝照片</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <div id="file_upload_div">
@@ -690,11 +693,11 @@
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo" class="ui-btn-active">拍攝照片</a></li>
-                    <li><a href="#model">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" class="ui-btn-active" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
@@ -702,25 +705,25 @@
 <!-- ****************************** 建物模型資料 model ***************************** -->
         <div data-role="page" id="model">
             <div data-role="header"  data-position="fixed">
-                <a href="#login">首頁</a>
+                <a data-transition="slide" data-direction="reverse" href="#login">首頁</a>
                 <h1>建物模型資料</h1>
-                <a href=""data-rel="back">上一頁</a>
+                <a data-transition="slide" data-direction="reverse" href=""data-rel="back">上一頁</a>
             </div>
             <div data-role="content">
                 <p>表單</p>  
                 <ul data-role="listview" data-inset="true" >
-                    <li><a href="model_simulate.html" rel="external">火災模擬案例</a></li>
-                    <li><a href="model_container.html" rel="external">貨櫃屋火場案例</a></li>
+                    <li><a href="model_simulate.html" data-transition="slide" rel="external">火災模擬案例</a></li>
+                    <li><a href="model_container.html" data-transition="slide" rel="external">貨櫃屋火場案例</a></li>
                 </ul>           
             </div>
             <div data-role="footer" data-position="fixed" >
                 <div data-role="navbar">
                   <ul>
-                    <li><a href="#status">現場勘災</a></li>
-                    <li><a href="#insight">目擊狀況</a></li>
-                    <li><a href="#law">消防法令</a></li>
-                    <li><a href="#photo" >拍攝照片</a></li>
-                    <li><a href="#model" class="ui-btn-active">建物圖形</a></li>
+                    <li><a href="#status" data-transition="slide">現場勘災</a></li>
+                    <li><a href="#insight" data-transition="slide">目擊狀況</a></li>
+                    <li><a href="#law" data-transition="slide">消防法令</a></li>
+                    <li><a href="#photo" data-transition="slide">拍攝照片</a></li>
+                    <li><a href="#model" class="ui-btn-active" data-transition="slide">建物圖形</a></li>
                   </ul>
                 </div><!-- /navbar -->
             </div>
