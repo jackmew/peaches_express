@@ -34,15 +34,38 @@ router.post('/saveHome',function(req,res){
 router.post('/saveLogin',function(req,res){
 	console.log("router : save login");
 	CRUD.saveLogin(req.body);
-	res.send("發送成功");
+	res.send("儲存登入資料成功");
 	
 });
-
+/******************************    地址 address  *********************************/
+router.post('/saveAddress',function(req,res){
+	console.log("router : save address");
+	CRUD.saveAddress(req.body);
+	res.send("儲存地址成功");
+	
+});
+/******************************    開口部結構表 open  *********************************/
+router.post('/saveOpen',function(req,res){
+	console.log("router : save saveOpen");
+	CRUD.saveOpen(req.body);
+	res.send("儲存開口部結構表成功");
+	
+});
 /******************************  查詢使用者  query user *********************************/
 router.get('/findLoginUser',function(req,res){
 	console.log("route : findLoginUser");
 	var name = req.query.username;
 	CRUD.findLoginUser(name,function(result){
+		res.send(result);
+	})
+});
+/******************************  查詢開口部結構表  query open *********************************/
+router.get('/findOpen',function(req,res){
+	console.log("route : findOpen");
+
+	var name = req.query.username;
+	CRUD.findOpen(name,function(result){
+		console.log(result);
 		res.send(result);
 	})
 });

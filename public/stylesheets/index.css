@@ -187,3 +187,10 @@ div[name="fire_container_flatPic"] img ,div[name="fire_container_flatPic"] ifram
     height:300px;
     background-color: blue;
 }
+/********************* display pretty json **********************/
+pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
+.string { color: green; }
+.number { color: red; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: darkblue; }
